@@ -283,6 +283,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
       let token = tokenParts.joined()
       print("Device Token: \(token)")
+      // TODO: pass token to provider
     }
 
     func application(
@@ -293,7 +294,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
      func application(
         _ application: UIApplication,
-        didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // TODO: got notification from apple, check for new messages
         print("notification", userInfo)
     }
     
